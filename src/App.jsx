@@ -32,9 +32,11 @@ function App() {
 
     if (!day) {
       errors.day = 'This field is required'
-    } if (!month) {
+    }
+    if (!month) {
       errors.month = 'This field is required'
-    } if (!year) {
+    }
+    if (!year) {
       errors.year = 'This field is required'
     }
     else {
@@ -45,33 +47,33 @@ function App() {
         errors.month = 'Must be a valid month'
       }
       if (date > new Date()) {
-        errors.year = 'Must be in the past'
+        errors.year = 'Must be in the past';
+      } else {
+        if (!isValidDayForMonth(day, month, year)) {
+          errors.date = 'Must be a valid date'
+        }
       }
-      if (date.toString() === 'Invalid date') {
-        errors.date = 'Must be a valid date'
-      } if (date) {
-        errors.date = 'Must be a valid date'
-      }
-    }
-    Date.prototype.isValid = function () {
 
-      return this.getTime() === this.getTime();
+
+
     }
-    console.log(date.isValid())
     setErrors(errors)
 
-    console.log()
+
 
     if (Object.keys(errors).length === 0) {
+
       calculateAge();
     }
   }
+
+  console.log('errrors state ::', errors)
   const calculateAge = () => {
-    const birtDate = new Date(year, month - 1, day)
+    const birthDate = new Date(year, month - 1, day)
     const now = today;
-    let age = now.getFullYear() - birtDate.getFullYear()
-    let months = now.getMonth() - birtDate.getMonth()
-    let days = now.getDate() - birtDate.getDate()
+    let age = now.getFullYear() - birthDate.getFullYear()
+    let months = now.getMonth() - birthDate.getMonth()
+    let days = now.getDate() - birthDate.getDate()
     if (months < 0 || (months === 0 && days < 0)) {
       age--;
       months += 12
@@ -84,35 +86,53 @@ function App() {
     return setAge({ years: age, months: months, days: days })
 
   }
+  const isValidDayForMonth = (day, month, year) => {
+    const daysInMonth = new Date(year, month, 0).getDate()
+    return day <= daysInMonth;
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
   }
-  console.log(errors)
+
 
   return (
     <>
+      {/* <AgeCalculator /> */}
       <div className="app">
         <div className="container-fluid ">
           <div className="col-sm p-3">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="day">Day:</label>
-              <input type="number" name="day"
-                min={1} max={31} required
-                value={day}
-                onChange={(e) => setDay(e.target.value)}
-                placeholder="DD"
-              />
-              <span>{errors || errors.date ? errors.day : errors.date}  </span>
-
-              <label htmlFor="month">Month:</label>
-              <input type="number" name="month"
-                min={1} max={12} required
-                value={month}
-                onChange={(e) => setMonth(e.target.value)}
-                placeholder="MM"
-              />
-              <span>{errors ? errors.month : ''} </span>
-              <label htmlFor="year">Year:</label>
+              <div className="today">
+                <label htmlFor="day" style={{
+                  color: errors.day || errors.date ? 'red' : ''
+                }} >Day:</label>
+                <input type="number" name="day"
+                  min={1} max={31} required
+                  value={day}
+                  onChange={(e) => setDay(e.target.value)}
+                  placeholder="DD"
+                />
+                {errors.day ? <span style={{ color: 'red' }}>{errors.day} </span> :
+                  errors.date ? <span style={{ color: 'red' }}>{errors.date} </span> : ''}
+              </div>
+              <div className="today">
+                <label htmlFor="month"
+                  style={{
+                    color: errors.month || errors.date ? 'red' : ''
+                  }}>Month:</label>
+                <input type="number" name="month"
+                  min={1} max={12} required
+                  value={month}
+                  onChange={(e) => setMonth(e.target.value)}
+                  placeholder="MM"
+                />
+                {errors.month ? <span style={{ color: 'red' }}>{errors.month} </span> : ''}
+              </div>
+              <div className="today">
+              <label htmlFor="year"
+                style={{
+                  color: errors.year || errors.date ? 'red' : ''
+                }}>Year:</label>
               <input
                 type="number" name="year"
                 min={1900} max={2099} required
@@ -120,7 +140,8 @@ function App() {
                 onChange={(e) => setYear(e.target.value)}
                 placeholder="YY"
               />
-              <span>{errors ? errors.year : ''} </span>
+              {errors.year ? <span style={{ color: 'red' }}>{errors.year} </span> : ''}
+              </div>
             </form>
 
 
