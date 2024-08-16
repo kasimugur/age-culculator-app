@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 function App() {
 
   const [today, setToday] = useState(new Date())
-  const [day, setDay] = useState('23')
-  const [month, setMonth] = useState('3')
-  const [year, setYear] = useState('2003')
+  const [day, setDay] = useState('')
+  const [month, setMonth] = useState('')
+  const [year, setYear] = useState('')
   const [errors, setErrors] = useState({
-    years: '',
-    days: '',
-    months: '',
-
+    year: '',
+    day: '',
+    month: '',
+    date: ''
   })
   const [age, setAge] = useState({
     years: '',
@@ -27,30 +27,67 @@ function App() {
   }, [])
 
   const updatedToday = () => {
+    let errors = {}
+    const date = new Date(year, month - 1, day)
+
+    if (!day) {
+      errors.day = 'This field is required'
+    } if (!month) {
+      errors.month = 'This field is required'
+    } if (!year) {
+      errors.year = 'This field is required'
+    }
+    else {
+      if (day < 1 || day > 31) {
+        errors.day = 'Must be a valid day '
+      }
+      if (month < 1 || month > 12) {
+        errors.month = 'Must be a valid month'
+      }
+      if (date > new Date()) {
+        errors.year = 'Must be in the past'
+      }
+      if (date.toString() === 'Invalid date') {
+        errors.date = 'Must be a valid date'
+      } if (date) {
+        errors.date = 'Must be a valid date'
+      }
+    }
+    Date.prototype.isValid = function () {
+
+      return this.getTime() === this.getTime();
+    }
+    console.log(date.isValid())
+    setErrors(errors)
+
+    console.log()
+
+    if (Object.keys(errors).length === 0) {
+      calculateAge();
+    }
+  }
+  const calculateAge = () => {
     const birtDate = new Date(year, month - 1, day)
     const now = today;
     let age = now.getFullYear() - birtDate.getFullYear()
     let months = now.getMonth() - birtDate.getMonth()
     let days = now.getDate() - birtDate.getDate()
-
     if (months < 0 || (months === 0 && days < 0)) {
       age--;
       months += 12
     }
-
     if (days < 0) {
       let updatedMonth = new Date(year, month, 0).getDate();
       days += updatedMonth
       months--;
     }
-
     return setAge({ years: age, months: months, days: days })
-  }
 
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
-
   }
+  console.log(errors)
 
   return (
     <>
@@ -65,6 +102,7 @@ function App() {
                 onChange={(e) => setDay(e.target.value)}
                 placeholder="DD"
               />
+              <span>{errors || errors.date ? errors.day : errors.date}  </span>
 
               <label htmlFor="month">Month:</label>
               <input type="number" name="month"
@@ -73,7 +111,7 @@ function App() {
                 onChange={(e) => setMonth(e.target.value)}
                 placeholder="MM"
               />
-
+              <span>{errors ? errors.month : ''} </span>
               <label htmlFor="year">Year:</label>
               <input
                 type="number" name="year"
@@ -82,15 +120,16 @@ function App() {
                 onChange={(e) => setYear(e.target.value)}
                 placeholder="YY"
               />
+              <span>{errors ? errors.year : ''} </span>
             </form>
 
 
           </div>
           <span>-- <button onClick={updatedToday} >dönüştür</button></span>
           <div className="box">
-            <h1>{age.years}  </h1><span>years </span>
-            <h1>{age.months} </h1><span>months </span>
-            <h1>{age.days} </h1><span>days</span>
+            <h1>{age.years === '' ? '--' : age.years}  </h1><span>years </span>
+            <h1>{age.months === '' ? '--' : age.months} </h1><span>months </span>
+            <h1>{age.days === '' ? '--' : age.days} </h1><span>days</span>
           </div>
         </div>
       </div>
