@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './style.scss'
 function App() {
 
   const [today, setToday] = useState(new Date())
@@ -53,9 +54,6 @@ function App() {
           errors.date = 'Must be a valid date'
         }
       }
-
-
-
     }
     setErrors(errors)
 
@@ -67,7 +65,6 @@ function App() {
     }
   }
 
-  console.log('errrors state ::', errors)
   const calculateAge = () => {
     const birthDate = new Date(year, month - 1, day)
     const now = today;
@@ -93,6 +90,7 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
   }
+  const iconArrow = <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" /></g></svg>
 
 
   return (
@@ -100,8 +98,8 @@ function App() {
       {/* <AgeCalculator /> */}
       <div className="app">
         <div className="container-fluid ">
-          <div className="col-sm p-3">
-            <form onSubmit={handleSubmit}>
+          <div className="header">
+            <form className="form" onSubmit={handleSubmit}>
               <div className="today">
                 <label htmlFor="day" style={{
                   color: errors.day || errors.date ? 'red' : ''
@@ -129,28 +127,36 @@ function App() {
                 {errors.month ? <span style={{ color: 'red' }}>{errors.month} </span> : ''}
               </div>
               <div className="today">
-              <label htmlFor="year"
-                style={{
-                  color: errors.year || errors.date ? 'red' : ''
-                }}>Year:</label>
-              <input
-                type="number" name="year"
-                min={1900} max={2099} required
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-                placeholder="YY"
-              />
-              {errors.year ? <span style={{ color: 'red' }}>{errors.year} </span> : ''}
+                <label htmlFor="year"
+                  style={{
+                    color: errors.year || errors.date ? 'red' : ''
+                  }}>Year:</label>
+                <input
+                  type="number" name="year"
+                  min={1900} max={2099} required
+                  value={year}
+                  onChange={(e) => setYear(e.target.value)}
+                  placeholder="YYYY"
+                />
+                {errors.year ? <span style={{ color: 'red' }}>{errors.year} </span> : ''}
               </div>
             </form>
 
 
           </div>
-          <span>-- <button onClick={updatedToday} >dönüştür</button></span>
-          <div className="box">
-            <h1>{age.years === '' ? '--' : age.years}  </h1><span>years </span>
-            <h1>{age.months === '' ? '--' : age.months} </h1><span>months </span>
-            <h1>{age.days === '' ? '--' : age.days} </h1><span>days</span>
+          <div className="line">
+             <button onClick={updatedToday} >{iconArrow}</button>
+             </div>
+          <div className="card">
+            <div className="box">
+              <h1>{age.years === '' ? '--' : age.years}  </h1><span>years </span>
+            </div>
+            <div className="box">
+              <h1>{age.months === '' ? '--' : age.months} </h1><span>months </span>
+            </div>
+            <div className="box">
+              <h1>{age.days === '' ? '--' : age.days} </h1><span>days</span>
+            </div>
           </div>
         </div>
       </div>
