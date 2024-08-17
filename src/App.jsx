@@ -145,6 +145,7 @@ function App() {
 
           </div>
           <div className="line">
+            <span></span>
              <button onClick={updatedToday} >{iconArrow}</button>
              </div>
           <div className="card">

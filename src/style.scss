@@ -30,16 +30,18 @@ $FontSizeIput: 32px;
 
   .app {
     background-color: $White;
-    width: 900px;
+    width: 1000px;
     padding: 40px;
-    height: 750px;
+    height: 830px;
     border-radius: 25px 25px 25% 25px;
     // flex-wrap: wrap;
 
     .container-fluid {
+      margin: 20px;
+      width: 900px;
+      height: 800px;
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
 
       .header {
 
@@ -74,21 +76,19 @@ $FontSizeIput: 32px;
 
       .line {
         display: flex;
-        padding: 30px;
-        border-bottom: 1px solid $SmokeyGrey;
-        flex-direction: row-reverse;
-        position: relative;
-        top: 5px;
+
+        span {
+          height: 60px;
+          width: 100%;
+          border-bottom: 1px solid ;
+        }
+
         button {
-          position: absolute;
-          // text-align: center;
-          top: 0;
-          left:auto;
-          // flex: 1;
+          order: 1;
           border: none;
           background-color: $Purple;
-          border-radius:50% ;
-          padding: 40px;
+          border-radius: 50%;
+          padding: 35px;
 
           &:hover {
             background-color: $OffBlack;
@@ -99,9 +99,30 @@ $FontSizeIput: 32px;
       }
 
       .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
         .box {
           display: flex;
           align-items: center;
+          font-size: 50px;
+          gap: 10px;
+          align-content: center;
+
+          h1 {
+            font-weight: bold;
+            font-size: 110px;
+            color: $Purple;
+          }
+
+          span {
+            font: optional;
+            font-weight: bold;
+            font-size: 105px;
+
+          }
         }
       }
     }
