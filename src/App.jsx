@@ -103,34 +103,34 @@ function App() {
               <div className="today">
                 <label htmlFor="day" style={{
                   color: errors.day || errors.date ? 'red' : ''
-                }} >Day:</label>
+                }} >Day</label>
                 <input type="number" name="day"
                   min={1} max={31} required
                   value={day}
                   onChange={(e) => setDay(e.target.value)}
                   placeholder="DD"
                 />
-                {errors.day ? <span style={{ color: 'red' }}>{errors.day} </span> :
-                  errors.date ? <span style={{ color: 'red' }}>{errors.date} </span> : ''}
+                {errors.day ? <span>{errors.day} </span> :
+                  errors.date ? <span>{errors.date} </span> : ''}
               </div>
               <div className="today">
                 <label htmlFor="month"
                   style={{
                     color: errors.month || errors.date ? 'red' : ''
-                  }}>Month:</label>
+                  }}>Month</label>
                 <input type="number" name="month"
                   min={1} max={12} required
                   value={month}
                   onChange={(e) => setMonth(e.target.value)}
                   placeholder="MM"
                 />
-                {errors.month ? <span style={{ color: 'red' }}>{errors.month} </span> : ''}
+                {errors.month ? <span>{errors.month} </span> : ''}
               </div>
               <div className="today">
                 <label htmlFor="year"
                   style={{
                     color: errors.year || errors.date ? 'red' : ''
-                  }}>Year:</label>
+                  }}>Year</label>
                 <input
                   type="number" name="year"
                   min={1900} max={2099} required
@@ -138,7 +138,7 @@ function App() {
                   onChange={(e) => setYear(e.target.value)}
                   placeholder="YYYY"
                 />
-                {errors.year ? <span style={{ color: 'red' }}>{errors.year} </span> : ''}
+                {errors.year ? <span>{errors.year} </span> : ''}
               </div>
             </form>
 
@@ -146,8 +146,8 @@ function App() {
           </div>
           <div className="line">
             <span></span>
-             <button onClick={updatedToday} >{iconArrow}</button>
-             </div>
+            <button onClick={updatedToday} >{iconArrow}</button>
+          </div>
           <div className="card">
             <div className="box">
               <h1>{age.years === '' ? '--' : age.years}  </h1><span>years </span>

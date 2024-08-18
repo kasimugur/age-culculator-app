@@ -30,14 +30,14 @@ $FontSizeIput: 32px;
 
   .app {
     background-color: $White;
-    width: 1000px;
+    max-width: 1000px;
     padding: 40px;
     height: 830px;
     border-radius: 25px 25px 25% 25px;
     // flex-wrap: wrap;
 
+
     .container-fluid {
-      margin: 20px;
       width: 900px;
       height: 800px;
       display: flex;
@@ -48,27 +48,44 @@ $FontSizeIput: 32px;
         .form {
           display: flex;
 
-          // width: 100%;
+          width: 100%;
+
           .today {
             padding: 20px;
             display: flex;
             flex-direction: column;
+            gap: 5px;
 
             label {
               font-size: 20px;
               font-weight: bold;
+              color: $SmokeyGrey;
             }
 
-            input {
-              border: 0.5px solid $SmokeyGrey;
-              border-radius: 5px;
+            input[type=number] {
+              font-size: $FontSizeIput;
+              border: 0.5px solid $LightGrey;
+              border-radius: 10px;
               padding: 18px;
 
-              // width: 100%;
-              &::placeholder {}
+              width: 175px;
+
+              &::placeholder {
+                font-weight: bold;
+                color: $SmokeyGrey;
+              }
+
+              &::-webkit-inner-spin-button,
+              ::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
             }
 
-            span {}
+            span {
+              margin-top: 3px;
+              color: $LightRed;
+            }
 
           }
         }
@@ -76,11 +93,11 @@ $FontSizeIput: 32px;
 
       .line {
         display: flex;
+        align-items: center;
 
         span {
-          height: 60px;
           width: 100%;
-          border-bottom: 1px solid ;
+          border-bottom: 1px solid $LightGrey;
         }
 
         button {
@@ -107,7 +124,7 @@ $FontSizeIput: 32px;
         .box {
           display: flex;
           align-items: center;
-          font-size: 50px;
+          // font-size: 50px;
           gap: 10px;
           align-content: center;
 
@@ -118,7 +135,6 @@ $FontSizeIput: 32px;
           }
 
           span {
-            font: optional;
             font-weight: bold;
             font-size: 105px;
 
