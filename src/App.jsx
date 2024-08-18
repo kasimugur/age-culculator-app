@@ -98,7 +98,7 @@ function App() {
       {/* <AgeCalculator /> */}
       <div className="app">
         <div className="container-fluid ">
-          <div className="header">
+          {/* <div className="header"> */}
             <form className="form" onSubmit={handleSubmit}>
               <div className="today">
                 <label htmlFor="day" style={{
@@ -143,10 +143,11 @@ function App() {
             </form>
 
 
-          </div>
+          {/* </div> */}
           <div className="line">
-            <span></span>
+            <span className="span1"></span>
             <button onClick={updatedToday} >{iconArrow}</button>
+            <span className="span2"></span>
           </div>
           <div className="card">
             <div className="box">

@@ -15,88 +15,100 @@ $FontSizeIput: 32px;
   box-sizing: border-box;
 }
 
-
-
-@media screen and (min-width:375px) {
+@media screen and (max-width:376px) {
   body {
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $OfWhite;
-    // width: 100%;
     height: 100vh;
   }
 
   .app {
     background-color: $White;
-    max-width: 1000px;
-    padding: 40px;
-    height: 830px;
-    border-radius: 25px 25px 25% 25px;
-    // flex-wrap: wrap;
-
+    width: 330px;
+    padding: 25px;
+    height: 630px;
+    border-radius: 25px 25px 100px 25px;
 
     .container-fluid {
-      width: 900px;
-      height: 800px;
+      margin: 15px 0;
+      width: 300px;
+      height: 600px;
       display: flex;
       flex-direction: column;
 
-      .header {
+      // .header {
 
-        .form {
+      .form {
+        display: flex;
+
+        // width: 80%;
+
+        .today {
+          padding: 2px;
           display: flex;
+          flex-direction: column;
+          margin-right: 5px;
 
-          width: 100%;
+          label {
+            font-size: 17px;
+            font-weight: bold;
+            color: $SmokeyGrey;
+          }
 
-          .today {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
+          input {
+            font-size: $FontSizeIput;
+            border: 0.5px solid $LightGrey;
+            border-radius: 10px;
+            padding: 14px 10px;
+            width: 90px;
+            font-weight: bold;
 
-            label {
-              font-size: 20px;
-              font-weight: bold;
+            &::placeholder {
+              font-weight: 600;
+              font-size: 25px;
               color: $SmokeyGrey;
             }
 
-            input[type=number] {
-              font-size: $FontSizeIput;
-              border: 0.5px solid $LightGrey;
-              border-radius: 10px;
-              padding: 18px;
-
-              width: 175px;
-
-              &::placeholder {
-                font-weight: bold;
-                color: $SmokeyGrey;
-              }
-
-              &::-webkit-inner-spin-button,
-              ::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-              }
+            &::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
             }
 
-            span {
-              margin-top: 3px;
-              color: $LightRed;
+            &:focus {
+              outline: none;
+              border: 1px solid $Purple;
             }
+          }
+
+          span {
+            font-size: 13px;
+            margin-top: 2px;
+            color: $LightRed;
 
           }
+
         }
       }
 
+      // }
+
       .line {
+        margin: 35px 0;
         display: flex;
         align-items: center;
 
-        span {
-          width: 100%;
+        .span1 {
+          width: 40%;
+          border-bottom: 1px solid $LightGrey;
+        }
+
+        .span2 {
+          order: 2;
+          width: 40%;
           border-bottom: 1px solid $LightGrey;
         }
 
@@ -105,7 +117,7 @@ $FontSizeIput: 32px;
           border: none;
           background-color: $Purple;
           border-radius: 50%;
-          padding: 35px;
+          padding: 10px;
 
           &:hover {
             background-color: $OffBlack;
@@ -124,23 +136,161 @@ $FontSizeIput: 32px;
         .box {
           display: flex;
           align-items: center;
-          // font-size: 50px;
-          gap: 10px;
+          gap: 5px;
           align-content: center;
+          width: 100%;
 
           h1 {
             font-weight: bold;
-            font-size: 110px;
+            font-size: 54px;
             color: $Purple;
           }
 
           span {
             font-weight: bold;
-            font-size: 105px;
-
+            font-size: 54px;
+            padding: 4px 6px;
           }
         }
       }
     }
   }
+}
+
+
+
+@media screen and (min-width:376px) {
+  body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $OfWhite;
+    height: 100vh;
+  }
+
+  .app {
+    background-color: $White;
+    width: 750px;
+    padding: 25px;
+    height: 630px;
+    border-radius: 25px 25px 25% 25px;
+
+    .container-fluid {
+      margin: 15px 10px;
+      width: 680px;
+      height: 530px;
+      display: flex;
+      flex-direction: column;
+
+      // .header {
+
+      .form {
+        display: flex;
+
+        // width: 80%;
+
+        .today {
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin-right: 5px;
+
+          label {
+            font-size: 17px;
+            font-weight: bold;
+            color: $SmokeyGrey;
+          }
+
+          input {
+            font-size: $FontSizeIput;
+            border: 0.5px solid $LightGrey;
+            border-radius: 10px;
+            padding: 14px 10px;
+            width: 135px;
+            font-weight: bold;
+
+            &::placeholder {
+              font-weight: bold;
+              color: $SmokeyGrey;
+            }
+
+            &::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            &:focus {
+              outline: none;
+              border: 1px solid $Purple;
+            }
+          }
+
+          span {
+            font-size: 13px;
+            margin-top: 2px;
+            color: $LightRed;
+
+          }
+
+        }
+      }
+
+      // }
+
+      .line {
+        display: flex;
+        align-items: center;
+
+        span {
+          width: 80%;
+          border-bottom: 1px solid $LightGrey;
+        }
+
+        button {
+          order: 1;
+          border: none;
+          background-color: $Purple;
+          border-radius: 50%;
+          padding: 20px;
+
+          &:hover {
+            background-color: $OffBlack;
+          }
+        }
+
+
+      }
+
+      .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .box {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          align-content: center;
+          width: 100%;
+
+          h1 {
+            font-weight: bold;
+            font-size: 80px;
+            color: $Purple;
+          }
+
+          span {
+            font-weight: bold;
+            font-size: 80px;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
 }
