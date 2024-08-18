@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$Purple: hsl(259, 100%, 65%);
+$LightRed: hsl(0, 100%, 67%);
+$White: hsl(0, 0%, 100%);
+$OfWhite: hsl(0, 0%, 94%);
+$LightGrey: hsl(0, 0%, 86%);
+$SmokeyGrey: hsl(0, 1%, 44%);
+$OffBlack: hsl(0, 0%, 8%);
+$FontSizeIput: 32px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width:376px) {
+  body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $OfWhite;
+    height: 100vh;
+  }
+
+  .app {
+    background-color: $White;
+    width: 330px;
+    padding: 25px;
+    height: 630px;
+    border-radius: 25px 25px 100px 25px;
+
+    .container-fluid {
+      margin: 15px 0;
+      width: 300px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+
+      // .header {
+
+      .form {
+        display: flex;
+
+        // width: 80%;
+
+        .today {
+          padding: 2px;
+          display: flex;
+          flex-direction: column;
+          margin-right: 5px;
+
+          label {
+            font-size: 17px;
+            font-weight: bold;
+            color: $SmokeyGrey;
+          }
+
+          input {
+            font-size: $FontSizeIput;
+            border: 0.5px solid $LightGrey;
+            border-radius: 10px;
+            padding: 14px 10px;
+            width: 90px;
+            font-weight: bold;
+
+            &::placeholder {
+              font-weight: 600;
+              font-size: 25px;
+              color: $SmokeyGrey;
+            }
+
+            &::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            &:focus {
+              outline: none;
+              border: 1px solid $Purple;
+            }
+          }
+
+          span {
+            font-size: 13px;
+            margin-top: 2px;
+            color: $LightRed;
+
+          }
+
+        }
+      }
+
+      // }
+
+      .line {
+        margin: 35px 0;
+        display: flex;
+        align-items: center;
+
+        .span1 {
+          width: 40%;
+          border-bottom: 1px solid $LightGrey;
+        }
+
+        .span2 {
+          order: 2;
+          width: 40%;
+          border-bottom: 1px solid $LightGrey;
+        }
+
+        button {
+          order: 1;
+          border: none;
+          background-color: $Purple;
+          border-radius: 50%;
+          padding: 10px;
+
+          &:hover {
+            background-color: $OffBlack;
+          }
+        }
+
+
+      }
+
+      .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .box {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          align-content: center;
+          width: 100%;
+
+          h1 {
+            font-weight: bold;
+            font-size: 54px;
+            color: $Purple;
+          }
+
+          span {
+            font-weight: bold;
+            font-size: 54px;
+            padding: 4px 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width:376px) {
+  body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $OfWhite;
+    height: 100vh;
+  }
+
+  .app {
+    background-color: $White;
+    width: 750px;
+    padding: 25px;
+    height: 630px;
+    border-radius: 25px 25px 25% 25px;
+
+    .container-fluid {
+      margin: 15px 10px;
+      width: 680px;
+      height: 530px;
+      display: flex;
+      flex-direction: column;
+
+      // .header {
+
+      .form {
+        display: flex;
+
+        // width: 80%;
+
+        .today {
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin-right: 5px;
+
+          label {
+            font-size: 17px;
+            font-weight: bold;
+            color: $SmokeyGrey;
+          }
+
+          input {
+            font-size: $FontSizeIput;
+            border: 0.5px solid $LightGrey;
+            border-radius: 10px;
+            padding: 14px 10px;
+            width: 135px;
+            font-weight: bold;
+
+            &::placeholder {
+              font-weight: bold;
+              color: $SmokeyGrey;
+            }
+
+            &::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            &:focus {
+              outline: none;
+              border: 1px solid $Purple;
+            }
+          }
+
+          span {
+            font-size: 13px;
+            margin-top: 2px;
+            color: $LightRed;
+
+          }
+
+        }
+      }
+
+      // }
+
+      .line {
+        display: flex;
+        align-items: center;
+
+        span {
+          width: 80%;
+          border-bottom: 1px solid $LightGrey;
+        }
+
+        button {
+          order: 1;
+          border: none;
+          background-color: $Purple;
+          border-radius: 50%;
+          padding: 20px;
+
+          &:hover {
+            background-color: $OffBlack;
+          }
+        }
+
+
+      }
+
+      .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .box {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          align-content: center;
+          width: 100%;
+
+          h1 {
+            font-weight: bold;
+            font-size: 80px;
+            color: $Purple;
+          }
+
+          span {
+            font-weight: bold;
+            font-size: 80px;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+}
