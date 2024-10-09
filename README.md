@@ -1,9 +1,7 @@
 # Age calculator App
 
-
-
 ## Table of contents
-
+  
 - [Overview](#overview)
   - [Screenshot](#screenshot)
   - [Links](#links)
