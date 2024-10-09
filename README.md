@@ -1,5 +1,4 @@
 # Age calculator App
-<<<<<<< HEAD
 
 ## Table of contents
   
@@ -42,6 +41,3 @@
   }, [])
 ```
 
-=======
-go to site  https://age-calculator-birthday.netlify.app
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571

@@ -15,89 +15,108 @@ $FontSizeIput: 32px;
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-@media only  screen  and (max-width:500px){
-  .app{
+@media only screen and (max-width:500px) {
+  .app {
     transition: all ease 0.3s;
     padding: 10px !important;
   }
-  .line{
+
+  .line {
     transition: all ease-in-out 0.3s !important;
-margin: 1rem 0;
-    button{
+    margin: 1rem 0;
+
+    button {
       padding: 10px !important;
       order: 0.5;
     }
-    .span2{
+
+    .span2 {
       order: 1;
     }
   }
-  .container-fluid{
+
+  .container-fluid {
     width: 310px !important;
   }
-  .box{
-    span{
+
+  .box {
+    span {
       font-size: 55px !important;
-      
+
     }
-    h1{
+
+    h1 {
       font-size: 55px !important;
     }
   }
-  .form{
+
+  .form {
     width: 100%;
   }
-  .today{
+
+  .today {
     padding: 0 !important;
-    label{
+
+    label {
       font-size: 14px !important;
     }
-    input{
+
+    input {
       width: 100px !important;
       font-size: 20px !important;
 
     }
-    span{
+
+    span {
       font-size: 10px !important;
     }
   }
 
 }
 
-@media  only screen and (min-width:500px)  and (max-width:800px) {
-  .app{
+@media only screen and (min-width:500px) and (max-width:800px) {
+  .app {
     transition: all ease 0.3s;
     padding: 10px !important;
   }
-  .line{
+
+  .line {
     transition: all ease-in-out 0.3s !important;
-margin: 1.2rem 0;
-    button{
+    margin: 1.2rem 0;
+
+    button {
       padding: 15px !important;
       order: 0.5;
     }
-    .span2{
+
+    .span2 {
       order: 1;
     }
   }
-  .container-fluid{
+
+  .container-fluid {
     width: 400px !important;
   }
-  .box{
-    span{
+
+  .box {
+    span {
       font-size: 65px !important;
-      
+
     }
-    h1{
+
+    h1 {
       font-size: 65px !important;
     }
   }
-  .form{
+
+  .form {
     width: 100%;
   }
-  .today{
+
+  .today {
     padding: 0 !important;
-    input{
+
+    input {
       font-size: 28px !important;
     }
   }
@@ -106,10 +125,7 @@ margin: 1.2rem 0;
 
 
 
-// @media screen and (min-width:376px) {
-=======
 @media screen and (max-width:376px) {
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571
   body {
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -119,177 +135,21 @@ margin: 1.2rem 0;
     height: 100vh;
   }
 
-<<<<<<< HEAD
-  
+
   .app {
     background-color: $White;
     width: 100%;
     max-height: 630px;
     padding: 25px;
     border-radius: 25px 25px 25% 25px;
-    
-=======
-  .app {
-    background-color: $White;
-    width: 330px;
-    padding: 25px;
-    height: 630px;
-    border-radius: 25px 25px 100px 25px;
 
-    .container-fluid {
-      margin: 15px 0;
-      width: 300px;
-      height: 600px;
-      display: flex;
-      flex-direction: column;
-
-      // .header {
-
-      .form {
-        display: flex;
-
-        // width: 80%;
-
-        .today {
-          padding: 2px;
-          display: flex;
-          flex-direction: column;
-          margin-right: 5px;
-
-          label {
-            font-size: 17px;
-            font-weight: bold;
-            color: $SmokeyGrey;
-          }
-
-          input {
-            font-size: $FontSizeIput;
-            border: 0.5px solid $LightGrey;
-            border-radius: 10px;
-            padding: 14px 10px;
-            width: 90px;
-            font-weight: bold;
-
-            &::placeholder {
-              font-weight: 600;
-              font-size: 25px;
-              color: $SmokeyGrey;
-            }
-
-            &::-webkit-inner-spin-button,
-            ::-webkit-outer-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-
-            &:focus {
-              outline: none;
-              border: 1px solid $Purple;
-            }
-          }
-
-          span {
-            font-size: 13px;
-            margin-top: 2px;
-            color: $LightRed;
-
-          }
-
-        }
-      }
-
-      // }
-
-      .line {
-        margin: 35px 0;
-        display: flex;
-        align-items: center;
-
-        .span1 {
-          width: 40%;
-          border-bottom: 1px solid $LightGrey;
-        }
-
-        .span2 {
-          order: 2;
-          width: 40%;
-          border-bottom: 1px solid $LightGrey;
-        }
-
-        button {
-          order: 1;
-          border: none;
-          background-color: $Purple;
-          border-radius: 50%;
-          padding: 10px;
-
-          &:hover {
-            background-color: $OffBlack;
-          }
-        }
-
-
-      }
-
-      .card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .box {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          align-content: center;
-          width: 100%;
-
-          h1 {
-            font-weight: bold;
-            font-size: 54px;
-            color: $Purple;
-          }
-
-          span {
-            font-weight: bold;
-            font-size: 54px;
-            padding: 4px 6px;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-
-@media screen and (min-width:376px) {
-  body {
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $OfWhite;
-    height: 100vh;
-  }
-
-  .app {
-    background-color: $White;
-    width: 750px;
-    padding: 25px;
-    height: 630px;
-    border-radius: 25px 25px 25% 25px;
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571
 
     .container-fluid {
       margin: 15px 10px;
       width: 680px;
       height: 530px;
       display: flex;
-<<<<<<< HEAD
-      
-=======
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571
+
       flex-direction: column;
 
       // .header {
@@ -352,11 +212,8 @@ margin: 1.2rem 0;
       .line {
         display: flex;
         align-items: center;
-<<<<<<< HEAD
-      
-=======
 
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571
+
         span {
           width: 80%;
           border-bottom: 1px solid $LightGrey;
@@ -406,8 +263,4 @@ margin: 1.2rem 0;
     }
   }
 
-<<<<<<< HEAD
-// }
-=======
 }
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571

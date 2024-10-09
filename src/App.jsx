@@ -95,56 +95,51 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
-    
-=======
-      {/* <AgeCalculator /> */}
->>>>>>> 2ea3c551735822726c81bf9845806fed7206c571
       <div className="app">
         <div className="container-fluid ">
           {/* <div className="header"> */}
-            <form className="form" onSubmit={handleSubmit}>
-              <div className="today">
-                <label htmlFor="day" style={{
-                  color: errors.day || errors.date ? 'red' : ''
-                }} >Day</label>
-                <input type="number" name="day"
-                  min={1} max={31} required
-                  value={day}
-                  onChange={(e) => setDay(e.target.value)}
-                  placeholder="DD"
-                />
-                {errors.day ? <span>{errors.day} </span> :
-                  errors.date ? <span>{errors.date} </span> : ''}
-              </div>
-              <div className="today">
-                <label htmlFor="month"
-                  style={{
-                    color: errors.month || errors.date ? 'red' : ''
-                  }}>Month</label>
-                <input type="number" name="month"
-                  min={1} max={12} required
-                  value={month}
-                  onChange={(e) => setMonth(e.target.value)}
-                  placeholder="MM"
-                />
-                {errors.month ? <span>{errors.month} </span> : ''}
-              </div>
-              <div className="today">
-                <label htmlFor="year"
-                  style={{
-                    color: errors.year || errors.date ? 'red' : ''
-                  }}>Year</label>
-                <input
-                  type="number" name="year"
-                  min={1900} max={2099} required
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                  placeholder="YYYY"
-                />
-                {errors.year ? <span>{errors.year} </span> : ''}
-              </div>
-            </form>
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="today">
+              <label htmlFor="day" style={{
+                color: errors.day || errors.date ? 'red' : ''
+              }} >Day</label>
+              <input type="number" name="day"
+                min={1} max={31} required
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
+                placeholder="DD"
+              />
+              {errors.day ? <span>{errors.day} </span> :
+                errors.date ? <span>{errors.date} </span> : ''}
+            </div>
+            <div className="today">
+              <label htmlFor="month"
+                style={{
+                  color: errors.month || errors.date ? 'red' : ''
+                }}>Month</label>
+              <input type="number" name="month"
+                min={1} max={12} required
+                value={month}
+                onChange={(e) => setMonth(e.target.value)}
+                placeholder="MM"
+              />
+              {errors.month ? <span>{errors.month} </span> : ''}
+            </div>
+            <div className="today">
+              <label htmlFor="year"
+                style={{
+                  color: errors.year || errors.date ? 'red' : ''
+                }}>Year</label>
+              <input
+                type="number" name="year"
+                min={1900} max={2099} required
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                placeholder="YYYY"
+              />
+              {errors.year ? <span>{errors.year} </span> : ''}
+            </div>
+          </form>
 
 
           {/* </div> */}
