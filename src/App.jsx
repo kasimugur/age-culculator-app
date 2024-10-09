@@ -95,7 +95,7 @@ function App() {
 
   return (
     <>
-      {/* <AgeCalculator /> */}
+    
       <div className="app">
         <div className="container-fluid ">
           {/* <div className="header"> */}
