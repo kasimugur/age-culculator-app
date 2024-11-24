@@ -15,7 +15,7 @@
 - [Challenges Faced](#challenges-faced)
 
 ## Overview
-The Age Calculator App is a sleek, user-friendly tool that computes a user’s exact age in years, months, days, and even seconds. Built with modern web technologies, the app ensures responsiveness and a seamless user experience.
+The Age Calculator App is a sleek, user-friendly tool that computes a user’s exact age in years, months, days. Built with modern web technologies, the app ensures responsiveness and a seamless user experience.
 
 ## Features
 - Calculate precise age based on birthdate.
