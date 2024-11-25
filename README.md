@@ -23,7 +23,12 @@ The Age Calculator App is a sleek, user-friendly tool that computes a user’s e
 - Clean and accessible UI.
 
 ## Screenshot
-![](./screenshot.jpg)
+![](./screenshot/screenshat%20(1).png)
+![](./screenshot/screenshat%20(2).png)
+![](./screenshot/screenshat%20(3).png)
+![](./screenshot/screenshat%20(4).png)
+![](./screenshot/screenshat%20(5).png)
+![](./screenshot/screenshat%20(6).png)
 
 ## Live Demo
 Live Site: [Live Site](https://age-calculator-birthday.netlify.app)
