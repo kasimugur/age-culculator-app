@@ -47,7 +47,7 @@ Ensure you have the following installed on your system:
 ### Installation
 Clone this repository:
 ```bash
-git clone https://github.com/yourusername/age-calculator-app.git
+git clone https://github.com/kasimugur/age-calculator-app.git
 cd age-calculator-app
 ```
 #### Install dependencies
